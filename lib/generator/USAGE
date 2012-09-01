@@ -1,0 +1,8 @@
+Description:
+    Generates a configuration file for WebrickNIO
+
+Example:
+    rails generate webricknio
+
+    This will create a file config/webricknio.rb
+

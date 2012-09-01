@@ -1,0 +1,7 @@
+---
+- !IPBlockerPrefixBlock,1234/PrefixBlock
+  block_list:
+  - '999.0'
+- !IPBlockerListBlock,1234/ListBlock
+  block_list:
+  - 999.0.0.1
