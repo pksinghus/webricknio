@@ -33,7 +33,7 @@ Some properties of inerest in the config file -
     :LogLevel       => ::WEBrick::Log::DEBUG
     :NumThreads     => 10,
 
-These properties are all overriden by command line options.
+Options passed through command line override these properties (such as port number).
 
 Currently, it does not support file uploads and websockets. With the addition of these two it will be ready to move to version 1.0
 
