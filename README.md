@@ -22,6 +22,6 @@ Some properties of inerest in the config file -
 
 :NumThreads     => 10,
 
-These properties are al overriden by command line options.
+These properties are all overriden by command line options.
 
 Currently, it does not support file uploads and websockets. With the addition of these two it will be ready to move to version 1.0
