@@ -1,6 +1,6 @@
 In your Gemfile -
 
-gem 'webricknio', :git => 'git@github.com:pksinghus/webricknio.git'
+gem "webricknio", "~> 0.5.0"
 
 then -
 
