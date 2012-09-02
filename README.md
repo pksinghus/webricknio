@@ -8,27 +8,26 @@ Use WEBrickNIO as highly scalable server for JRuby apps. Taking advantage of JRu
 
 In your Gemfile -
 
-gem "webricknio", "~> 0.6.0"
+    gem "webricknio", "~> 0.6.0"
 
 then -
 
-bundle install
+    bundle install
 
 This will install webricknio-{version}.gem
 
 To run, at your rails root -
 
-rails s wnio
+    rails s wnio
 
 To get the configuration file in your config directory -
 
-rails g webricknio - this creates a file webricknio.rb in the 'config' directory (not in config/initialzers)
+    rails g webricknio - this creates a file webricknio.rb in the 'config' directory (not in config/initialzers)
 
 Some properties of inerest in the config file -
 
-:LogLevel       => ::WEBrick::Log::DEBUG
-
-:NumThreads     => 10,
+    :LogLevel       => ::WEBrick::Log::DEBUG
+    :NumThreads     => 10,
 
 These properties are all overriden by command line options.
 
