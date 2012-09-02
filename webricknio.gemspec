@@ -3,7 +3,7 @@ require 'rubygems'
 spec = Gem::Specification.new do |s|
   s.name = 'webricknio'
   s.description = 'WEBrick with Java NIO, uses epoll and thread pool for scalability'
-  s.version = '0.5.0'
+  s.version = '0.6.0'
   s.summary = "WEBrick with NIO"
   s.files = Dir.glob("**/**/**")
   s.test_files = Dir.glob("test/*_test.rb")
