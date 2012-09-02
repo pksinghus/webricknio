@@ -19,6 +19,7 @@ rails g webricknio - this creates a file webricknio.rb in the 'config' directory
 Some properties of inerest in the config file -
 
 :LogLevel       => ::WEBrick::Log::DEBUG
+
 :NumThreads     => 10,
 
 These properties are al overriden by command line options.
