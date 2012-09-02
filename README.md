@@ -1,6 +1,6 @@
 **Summary** -
 
-Taking advantage of JRuby, WEBrick’s code has been littered with Java NIO code and the result is WEBrickNIO. epoll and thread pool have been added to WEBrickNIO so that it uses the same technology that make eventmachine and nginx so scalable.
+Use WEBrickNIO as highly scalable server for JRuby apps. Taking advantage of JRuby, WEBrick’s code has been littered with Java NIO code and the result is WEBrickNIO. epoll and thread pool have been added to WEBrickNIO so that it uses the same technology that make eventmachine and nginx so scalable.
 
 - - -
 
