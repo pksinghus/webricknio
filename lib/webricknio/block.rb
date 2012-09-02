@@ -51,12 +51,12 @@ module WEBrickNIO
 
       super
 
-      at_exit do
-        file = File.new(File.expand_path('block.yaml', File.dirname(__FILE__)), "w")
-        dump = YAML::dump(@chain)
-        file.write(dump)
-        file.close
-      end
+#      at_exit do
+#        file = File.new(File.expand_path('block.yaml', File.dirname(__FILE__)), "w")
+#        dump = YAML::dump(@chain)
+#        file.write(dump)
+#        file.close
+#      end
     end
 
     def load
