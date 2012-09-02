@@ -8,7 +8,7 @@ Use WEBrickNIO as highly scalable server for JRuby apps. Taking advantage of JRu
 
 In your Gemfile -
 
-gem "webricknio", "~> 0.5.0"
+gem "webricknio", "~> 0.6.0"
 
 then -
 
