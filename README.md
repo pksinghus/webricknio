@@ -2,6 +2,8 @@
 
 Use WEBrickNIO as highly scalable server for JRuby apps. Taking advantage of JRuby, WEBrick’s code has been littered with Java NIO code and the result is WEBrickNIO. epoll and thread pool have been added to WEBrickNIO so that it uses the same technology that make eventmachine and nginx so scalable.
 
+One server is all you need, configure as many threads as your machine can run, no need for any cluster.
+
 - - -
 
 **Installation** -
@@ -22,7 +24,9 @@ To run, at your rails root -
 
 To get the configuration file in your config directory -
 
-    rails g webricknio - this creates a file webricknio.rb in the 'config' directory (not in config/initialzers)
+    rails g webricknio 
+    
+- this creates a file webricknio.rb in the 'config' directory (not in config/initialzers)
 
 Some properties of inerest in the config file -
 
