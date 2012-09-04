@@ -51,9 +51,10 @@ or behind nginx -
       server_name  .server.com;
       
         location / {
-            proxy_pass http://www.server.com;
+            proxy_set_header X-Real-IP $remote_addr;            
             proxy_http_version 1.1;
             proxy_set_header Connection "";
+            proxy_pass http://www.server.com;
         }    
     }
         
