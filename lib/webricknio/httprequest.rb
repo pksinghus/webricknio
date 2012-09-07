@@ -33,7 +33,7 @@ module WEBrickNIO
 
     # :section: Request-URI
     attr_reader :request_uri, :path
-    attr_accessor :script_name, :path_info, :query_string
+    attr_accessor :script_name, :path_info, :query_string, :blocker_chain
 
     # :section: Header and entity body
     attr_reader :raw_header, :header, :cookies
@@ -80,6 +80,7 @@ module WEBrickNIO
       @remaining_size = nil
       @socket_channel = nil
       @socket = nil
+      @blocker_chain = nil
 
       @forwarded_proto = @forwarded_host = @forwarded_port =
         @forwarded_server = @forwarded_for = nil
@@ -146,10 +147,17 @@ module WEBrickNIO
         @accept_encoding =  ::WEBrick::HTTPUtils.parse_qvalues(self['accept-encoding'])
         @accept_language =  ::WEBrick::HTTPUtils.parse_qvalues(self['accept-language'])
       end
+
       return if @request_method == "CONNECT"
       return if @unparsed_uri == "*"
 
       @logger.debug "User Agent: #{self["User-Agent"]}"
+      @logger.debug "Host: #{self["Host"]}, X-Real-IP: #{self["X-Real-IP"]}"
+
+      if @blocker_chain && self["X-Real-IP"] && @blocker_chain.block_ip?(self["X-Real-IP"])
+        @logger.debug "IP blocked: #{self["X-Real-IP"]}, raising EOF"
+        raise ::WEBrick::HTTPStatus::EOFError
+      end
 
       step_two
 

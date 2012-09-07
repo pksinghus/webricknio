@@ -37,7 +37,7 @@ java_import 'java.util.Iterator'
 module WEBrickNIO
 
   class HTTPServer
-    attr_reader :status, :config, :logger, :selector
+    attr_reader :status, :config, :logger, :selector, :blocker_chain
 
     def initialize(config={}, default=Config::HTTP)
 
@@ -246,6 +246,7 @@ module WEBrickNIO
           time1 = Time.now
           req = @attachment.request || ::WEBrickNIO::HTTPRequest.new(@config)
           res = @attachment.response || ::WEBrickNIO::HTTPResponse.new(@config)
+          req.blocker_chain = @server.blocker_chain
 
           @socket_id = @sock_channel.socket.object_id
 
