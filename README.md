@@ -37,9 +37,9 @@ Options passed through command line override these properties (such as port numb
 
 Currently, it does not support file uploads and websockets. With the addition of these two it will be ready to move to version 1.0
 
-Use it by itself,
+Use it by itself (in which case it will have to be run as root if it must bind to port 80, because JRuby can't spawn),
 
-or behind nginx -
+Or behind nginx -
 
     upstream www.server.com {
       server 127.0.0.1:3002;
@@ -51,11 +51,17 @@ or behind nginx -
       server_name  .server.com;
       
         location / {
-            proxy_pass http://www.server.com;
+            proxy_set_header X-Real-IP $remote_addr;            
             proxy_http_version 1.1;
             proxy_set_header Connection "";
+            proxy_pass http://www.server.com;
         }    
     }
         
-    
+- - -
+[Blocking IP addresses](https://github.com/pksinghus/webricknio/wiki/Blocking-IP-addresses)
+- - - 
+
+For more information on technology, check out -
+[Why WEBrickNIO](http://www.pradeeplogs.com/items/1-why-webricknio)
     
